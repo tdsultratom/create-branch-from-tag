@@ -10,14 +10,14 @@ async function run() {
         const gh = github.getOctokit(process.env.GITHUB_TOKEN);
 
         // Get the input from the workflow file.
-        let tag = core.getInput('tag_name', { required: true });
-        tag = tag.replace(/^refs\/tags\//, '');
+        let tag_name = core.getInput('tag_ref', { required: true });
+        tag_name = tag_name.replace(/^refs\/tags\//, '');
         const owner = core.getInput('owner', { required: true });
         const repo = core.getInput('repo', { required: true });
 
 
         // Create the branch
-        const branch = `release@${tag}`;
+        const branch = `release/${tag_name}`;
 
         core.info(`Creating branch ${branch}`);
 
@@ -47,6 +47,7 @@ async function run() {
 
         // Set the output
         core.setOutput('branch_name', branch);
+        core.setOutput('tag_name', tag_name);;
         core.setOutput('branch_url', `https://github.com/${owner}/${repo}/tree/${branch}`);
     } catch (error) {
         core.setFailed(error.message);
