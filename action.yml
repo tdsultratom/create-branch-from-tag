@@ -1,8 +1,8 @@
 name: 'Create a Branch'
 description: 'Create a Branch from tag/release'
-author: 'Muhammad Umer Farooq'
+author: 'TCBarrett'
 inputs:
-  tag_name:
+  tag_ref:
     description: 'The name of the tag. This should come from the webhook payload, `github.GITHUB_REF` when a user pushes a new tag'
     required: true
   owner:
@@ -14,10 +14,12 @@ inputs:
 outputs:
   branch_name:
     description: 'The Branch Name of the created branch'
+  tag_name:
+    description: 'The Tag Name (not the tag_ref passed into GitHub).
   branch_url:
     description: 'The URL users can navigate to in order to view the branch'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'tag'
