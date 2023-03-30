@@ -15,7 +15,7 @@ outputs:
   branch_name:
     description: 'The Branch Name of the created branch'
   tag_name:
-    description: 'The Tag Name (not the tag_ref passed into GitHub).
+    description: 'The Tag Name (not the tag_ref passed into GitHub).'
   branch_url:
     description: 'The URL users can navigate to in order to view the branch'
 runs:
