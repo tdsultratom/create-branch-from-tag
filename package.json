@@ -1,6 +1,6 @@
 {
   "name": "create-branch-from-tag",
-  "version": "1.2",
+  "version": "1.2.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
