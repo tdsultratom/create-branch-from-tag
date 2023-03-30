@@ -10,7 +10,7 @@ async function run() {
         const gh = github.getOctokit(process.env.GITHUB_TOKEN);
 
         // Get the input from the workflow file.
-        let tag_name = core.getInput('tag_ref', { required: true });
+        let tag_name = core.getInput('tag_name', { required: true });
         tag_name = tag_name.replace(/^refs\/tags\//, '');
         const owner = core.getInput('owner', { required: true });
         const repo = core.getInput('repo', { required: true });

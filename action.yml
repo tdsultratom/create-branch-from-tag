@@ -2,7 +2,7 @@ name: 'Create a Branch'
 description: 'Create a Branch from tag/release'
 author: 'TCBarrett'
 inputs:
-  tag_ref:
+  tag_name:
     description: 'The name of the tag. This should come from the webhook payload, `github.GITHUB_REF` when a user pushes a new tag'
     required: true
   owner:
